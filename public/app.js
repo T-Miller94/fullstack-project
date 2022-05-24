@@ -7,5 +7,14 @@ const searchBar = document.querySelector('#search_bar')
 const resultBox = document.querySelector('#results')
 
 //button functions
+userSearch.addEventListener('click', userSearchButton)
+newUser.addEventListener('click', newUserButton)
 
 //callback functions
+function userSearchButton() {
+    console.log('Working')
+}
+
+function newUserButton() {
+    console.log('also working')
+}
