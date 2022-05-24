@@ -73,6 +73,7 @@ app.patch('/person/:id', async (req, res) => {
             UPDATE person
             SET name = $1, password = $2, email = $3
             WHERE id = $4`, [name, password, email, id])
+            res.json(req.body)
     } catch (error) {
         console.log(error.message)
         res.send(error.message)
@@ -80,6 +81,16 @@ app.patch('/person/:id', async (req, res) => {
 })
 
 //delete person
+app.delete('/person/:id', async (req, res) => {
+    try {
+        let id = req.params.id
+        await pool.query(`DELETE FROM person WHERE id = $1`, [id])
+        res.send(`User ID#:${id} has been deleted`)
+    } catch (error) {
+        console.log(error.message)
+        res.send(error.message)
+    }
+})
 
 ////////////////////////////////////////////////////transactions////////////////////////////////////////////////
 
@@ -188,7 +199,29 @@ app.patch('/transactions/:id', async (req, res) => {
     }
 })
 
-//delete transaction
+//delete one transaction
+app.delete('/transactions/:id', async (req, res) => {
+    try {
+        let id = req.params.id
+        await pool.query(`DELETE FROM transactions WHERE trans_id = $1`, [id])
+        res.send(`Transaction ID#:${id} has been deleted`)
+    } catch (error) {
+        console.log(error.message)
+        res.send(error.message)
+    }
+})
+
+//delete all transactions from one person
+app.delete('/transactions-clear/:id', async (req, res) => {
+    try {
+        let id = req.params.id
+        await pool.query(`DELETE FROM transactions WHERE person_id = $1`, [id])
+        res.send(`User ID#:${id} transaction history: cleared`)
+    } catch (error) {
+        console.log(error.message)
+        res.send(error.message)
+    }
+})
 
 
 //tell server to listen on PORT
