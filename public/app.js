@@ -1,10 +1,10 @@
 //declarations
 const body = document.querySelector('body')
 const main = document.querySelector('#main')
-const userSearch = document.querySelector('#user_search')
-const newUser = document.querySelector('#new_user')
-const stats = document.querySelector('#user_stats')
-const searchBar = document.querySelector('#search_bar')
+const userSearch = document.querySelector('#user-search')
+const newUser = document.querySelector('#new-user')
+const stats = document.querySelector('#user-stats')
+const searchBar = document.querySelector('#search-bar')
 const resultBox = document.querySelector('#results')
 
 //button functions
@@ -14,9 +14,9 @@ newUser.addEventListener('click', newUserButton)
 //callback functions
 function userSearchButton() {
     let searchPopUp = document.createElement('div')
-    searchPopUp.id = 'user_popup'
+    searchPopUp.id = 'user-popup'
         let searchContainer = document.createElement('div')
-        searchContainer.id = 'search_container'
+        searchContainer.id = 'search-container'
             let name = document.createElement('input')
                 name.id = 'name'
             let password = document.createElement('input')
@@ -31,7 +31,7 @@ function userSearchButton() {
             searchContainer.append(email)
             searchContainer.append(search)
         searchPopUp.append(searchContainer)
-    main.prepend(searchPopUp)
+    body.prepend(searchPopUp)
     
 }
 
