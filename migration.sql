@@ -1,19 +1,18 @@
 DROP DATABASE IF EXISTS budget_tracker;
 
 CREATE DATABASE budget_tracker;
-
 \c budget_tracker
 
 DROP TABLE IF EXISTS transactions;
-DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS person;
 
-CREATE TABLE transactions(
+CREATE TABLE person(
     id SERIAL,
     name VARCHAR(55),
     password VARCHAR(55),
     email VARCHAR(55)
 );
-CREATE TABLE users(
+CREATE TABLE transactions(
     id SERIAL,
     money_in BOOLEAN,
     kind VARCHAR(55),
