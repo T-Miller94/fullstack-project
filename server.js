@@ -63,6 +63,21 @@ app.post('/person', async (req, res) => {
 })
 
 //update person
+app.patch('/person/:id', async (req, res) => {
+    try {
+        let id = req.params.id
+        let name = req.body.name
+        let password = req.body.password
+        let email = req.body.email
+        await pool.query(`
+            UPDATE person
+            SET name = $1, password = $2, email = $3
+            WHERE id = $4`, [name, password, email, id])
+    } catch (error) {
+        console.log(error.message)
+        res.send(error.message)
+    }
+})
 
 //delete person
 
@@ -156,6 +171,22 @@ app.post('/transactions', async (req, res) => {
 })
 
 //update transaction
+app.patch('/transactions/:id', async (req, res) => {
+    try {
+        let person_id = req.params.id
+        let money_in = req.body.money_in
+        let kind = req.body.kind
+        let amount = req.body.amount
+        await pool.query(`
+            UPDATE transactions
+            SET money_in = $1, kind = $2, amount = $3
+            WHERE person_id = $4`, [money_in, kind, amount, person_id])
+            res.json(req.body)
+    } catch (error) {
+        console.log(error.message)
+        res.send(error.message)
+    }
+})
 
 //delete transaction
 
