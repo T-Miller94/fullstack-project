@@ -13,7 +13,7 @@ CREATE TABLE person(
     email VARCHAR(55)
 );
 CREATE TABLE transactions(
-    id SERIAL,
+    trans_id SERIAL,
     money_in BOOLEAN,
     kind VARCHAR(55),
     amount DEC(7, 2),
@@ -27,7 +27,7 @@ INSERT INTO person (name, password, email) VALUES ('test4', 'test4', 'test4@test
 INSERT INTO person (name, password, email) VALUES ('test5', 'test5', 'test5@testmail.com');
 
 INSERT INTO transactions (money_in, kind, amount, person_id) VALUES (true, 'pay', 1565.09, 1);
-INSERT INTO transactions (money_in, kind, amount, person_id) VALUES (false, 'bill', 1565.09, 1);
-INSERT INTO transactions (money_in, kind, amount, person_id) VALUES (false, 'bill', 1565.09, 1);
-INSERT INTO transactions (money_in, kind, amount, person_id) VALUES (true, 'pay', 1565.09, 2);
-INSERT INTO transactions (money_in, kind, amount, person_id) VALUES (false, 'bill', 1565.09, 3);
+INSERT INTO transactions (money_in, kind, amount, person_id) VALUES (false, 'bill', 1500.09, 1);
+INSERT INTO transactions (money_in, kind, amount, person_id) VALUES (false, 'bill', 565.09, 1);
+INSERT INTO transactions (money_in, kind, amount, person_id) VALUES (true, 'pay', 905.09, 2);
+INSERT INTO transactions (money_in, kind, amount, person_id) VALUES (false, 'bill', 65.09, 3);

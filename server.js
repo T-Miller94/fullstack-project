@@ -18,9 +18,12 @@ const pool = new Pool ({
 })
 pool.connect()
 
-//////////////////////////HANDLE REQUESTS////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////HANDLE REQUESTS//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////person///////////////////////////////////////////////////////////
 //get all from person (admin finctionality)
-// app.get('/')
 app.get('/person', async (req, res) => {
     try {
         let data = await pool.query(`SELECT * FROM person`)
@@ -44,11 +47,26 @@ app.get('/person/:id', async (req, res) => {
 })
 
 //add new person
+app.post('/person', async (req, res) => {
+    try {
+        let name = req.body.name
+        let password = req.body.password
+        let email = req.body.email
+        await pool.query(`
+            INSERT INTO person (name, password, email)
+            VALUES ($1, $2, $3)`, [name, password, email])
+        res.json(req.body)
+    } catch (error) {
+        console.log(error.message)
+        res.send(error.message)
+    }
+})
 
 //update person
 
 //delete person
 
+////////////////////////////////////////////////////transactions////////////////////////////////////////////////
 
 //get all from transactions (admin finctionality)
 app.get('/transactions', async (req, res) => {
@@ -61,11 +79,11 @@ app.get('/transactions', async (req, res) => {
     }
 })
 
-//get all transactions from one person
+//get one transaction from one person
 app.get('/transactions/:id', async (req, res) => {
     try {
         let id = req.params.id
-        let data = await pool.query(`SELECT * FROM transactions WHERE id = $1`, [id])
+        let data = await pool.query(`SELECT * FROM transactions WHERE trans_id = $1`, [id])
         res.json(data.rows)
     } catch (error) {
         console.log(error.message)
@@ -73,13 +91,74 @@ app.get('/transactions/:id', async (req, res) => {
     }
 })
 
-//get one transaction from one person
+//get all transactions from one person
+app.get('/transactions-of/:id', async (req, res) => {
+    try {
+        let id = req.params.id
+        let data = await pool.query(`
+            SELECT name, trans_id, money_in, amount
+            FROM person, transactions 
+            WHERE transactions.person_id = person.id AND person.id = $1`, [id])
+        res.json(data.rows)
+    } catch (error) {
+        console.log(error.message)
+        res.send(error.message)
+    }
+})
+
+//get all money_in = true from one person
+app.get('/transactions-in/:id', async (req, res) => {
+    try {
+        let id = req.params.id
+        let data = await pool.query(`
+            SELECT name, trans_id, money_in, amount
+            FROM person, transactions 
+            WHERE transactions.person_id = person.id AND person.id = $1 AND money_in = true`, [id])
+        res.json(data.rows)
+    } catch (error) {
+        console.log(error.message)
+        res.send(error.message)
+    }
+})
+
+
+//get all money_in = false from one person
+app.get('/transactions-out/:id', async (req, res) => {
+    try {
+        let id = req.params.id
+        let data = await pool.query(`
+            SELECT name, trans_id, money_in, amount
+            FROM person, transactions 
+            WHERE transactions.person_id = person.id AND person.id = $1 AND money_in = false`, [id])
+        res.json(data.rows)
+    } catch (error) {
+        console.log(error.message)
+        res.send(error.message)
+    }
+})
+
 
 //add new transaction
+app.post('/transactions', async (req, res) => {
+    try {
+        let money_in = req.body.money_in
+        let kind = req.body.kind
+        let amount = req.body.amount
+        let person_id = req.body.person_id
+        await pool.query(`
+            INSERT INTO transactions (money_in, kind, amount, person_id)
+            VALUES ($1, $2, $3, $4)`, [money_in, kind, amount, person_id])
+        res.json(req.body)
+    } catch (error) {
+        console.log(error.message)
+        res.send(error.message)
+    }
+})
+
+//update transaction
 
 //delete transaction
 
-//update transaction
 
 //tell server to listen on PORT
 app.listen(PORT, () => {
