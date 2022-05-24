@@ -21,6 +21,15 @@ pool.connect()
 //////////////////////////HANDLE REQUESTS////////////////////////////
 //get all from person (admin finctionality)
 // app.get('/')
+app.get('/person', async (req, res) => {
+    try {
+        let data = await pool.query(`SELECT * FROM person`)
+        res.json(data.rows)
+    } catch (error) {
+        console.log(error.message)
+        res.send(error.message)
+    }
+})
 
 //get one from person
 app.get('/person/:id', async (req, res) => {
@@ -41,7 +50,16 @@ app.get('/person/:id', async (req, res) => {
 //delete person
 
 
-//get all from transactions (admin finctionality revisit later)
+//get all from transactions (admin finctionality)
+app.get('/transactions', async (req, res) => {
+    try {
+        let data = await pool.query(`SELECT * FROM transactions`)
+        res.json(data.rows)
+    } catch (error) {
+        console.log(error.message)
+        res.send(error.message)
+    }
+})
 
 //get all transactions from one person
 app.get('/transactions/:id', async (req, res) => {
