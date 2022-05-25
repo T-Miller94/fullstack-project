@@ -38,6 +38,7 @@ function userSearchButton() {
                 search.id = 'search'
                 search.innerText = 'Search'
         searchContainer.append(name)
+        searchContainer.append(id)
         searchContainer.append(password)
         searchContainer.append(search)
     searchPopUp.append(searchContainer)
