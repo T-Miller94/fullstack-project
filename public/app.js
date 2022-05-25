@@ -31,18 +31,16 @@ function userSearchButton() {
             let password = document.createElement('input')
                 password.id = 'password'
                 password.classList.add('search-bar')
-            let email = document.createElement('input')
-                email.id = 'email'
-                email.classList.add('search-bar')
             let search = document.createElement('button')
                 search.id = 'search'
                 search.innerText = 'Search'
         searchContainer.append(name)
         searchContainer.append(password)
-        searchContainer.append(email)
         searchContainer.append(search)
     searchPopUp.append(searchContainer)
     body.prepend(searchPopUp)
+
+    search.addEventListener('click', () => findUser(name.value, password.value))
 }
 
 function newUserButton() {
@@ -105,4 +103,10 @@ function hidePopUp(e) {
     if(e.target.id === 'popup') {
         e.currentTarget.remove()
     }
+}
+
+async function findUser(name, password) {
+    let result = await fetch('http://localhost:8000/person')
+    let data = await result.rows
+    console.log(data)
 }
