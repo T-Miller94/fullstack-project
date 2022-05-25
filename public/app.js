@@ -1,3 +1,6 @@
+const { application } = require("express")
+const { json } = require("express/lib/response")
+
 //declarations
 const body = document.querySelector('body')
 const main = document.querySelector('#main')
@@ -110,7 +113,26 @@ function hidePopUp(e) {
 }
 
 async function findUser(name, id, password) {
-    $.get(`https://damp-taiga-73156.herokuapp.com/person/${id}`, (data) => {
-        console.log(data[0])
+    $.get(`https://damp-taiga-73156.herokuapp.com/person/${id}`, (user) => {
+        console.log(user[0])
+    })
+}
+
+async function addUser(name, password, email) {
+    let body =
+    {
+        "name": `${name}`,
+        "password": `${password}`,
+        "email": `${email}`
+    }
+
+    $.ajax({
+        url: `https://damp-taiga-73156.herokuapp.com/person`,
+        type: 'POST',
+        contentType: application/json,
+        dataType: 'json',
+        data: JSON.stringify(body),
+        success: () => {console.log(`${name} ${email}`)},
+        error: () => {console.log(error.message)}
     })
 }
