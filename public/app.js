@@ -15,14 +15,22 @@ newUser.addEventListener('click', newUserButton)
 function userSearchButton() {
     let searchPopUp = document.createElement('div')
     searchPopUp.id = 'user-popup'
+    searchPopUp.addEventListener('click', hideSearch)
+    let cancel = document.createElement('button')
+    cancel.id = 'cancel'
+    cancel.addEventListener('click', hideSearch)
+    //searchPopUp.append(cancel)
         let searchContainer = document.createElement('div')
         searchContainer.id = 'search-container'
             let name = document.createElement('input')
                 name.id = 'name'
+                name.classList.add('user-search')
             let password = document.createElement('input')
                 password.id = 'password'
+                password.classList.add('user-search')
             let email = document.createElement('input')
                 email.id = 'email'
+                email.classList.add('user-search')
             let search = document.createElement('button')
                 search.id = 'search'
                 search.innerText = 'Search'
@@ -33,6 +41,11 @@ function userSearchButton() {
         searchPopUp.append(searchContainer)
     body.prepend(searchPopUp)
     
+}
+function hideSearch(e) {
+    if(e.target.id === 'cancel') {
+        e.currentTarget.remove()
+    }
 }
 
 function newUserButton() {
