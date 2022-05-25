@@ -1,8 +1,3 @@
-DROP DATABASE IF EXISTS budget_tracker;
-
-CREATE DATABASE budget_tracker;
-\c budget_tracker
-
 DROP TABLE IF EXISTS transactions;
 DROP TABLE IF EXISTS person;
 
