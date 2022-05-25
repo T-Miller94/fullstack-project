@@ -114,7 +114,7 @@ function hidePopUp(e) {
 async function findUser(name, id, password) {
     $.get(`https://damp-taiga-73156.herokuapp.com/person/${id}`, (user) => {
         if(name === user[0].name && password === user[0].password) {
-            $.get(`https://damp-taiga-73156.herokuapp.com/transactions/${id}`, (trans) => {
+            $.get(`https://damp-taiga-73156.herokuapp.com/transactions-of/${id}`, (trans) => {
                 $('#results').empty()    
                 for(let obj of trans) {
                     displayResult(obj)
@@ -145,7 +145,7 @@ async function addUser(name, password, email) {
 
 function displayResult(obj) {
     let result = document.createElement('p1')
-    result.innerText = `Transaction ID${obj.trans_id}: ${isCredit(obj.money_in)} from ${obj.kind}, in the amount of ${obj.amount}`
+    result.innerText = `Transaction ID:${obj.trans_id} - ${isCredit(obj.money_in)} from ${obj.kind}, in the amount of ${obj.amount}`
     resultBox.append(result)
 }
 
