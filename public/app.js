@@ -62,15 +62,17 @@ function newUserButton() {
             let email = document.createElement('input')
                 email.id = 'email'
                 email.classList.add('search-bar')
-            let search = document.createElement('button')
-                search.id = 'search'
-                search.innerText = 'Add User'
+            let add = document.createElement('button')
+                add.id = 'add-user'
+                add.innerText = 'Add User'
         newUserContainer.append(name)
         newUserContainer.append(password)
         newUserContainer.append(email)
         newUserContainer.append(search)
     newUserPopUp.append(newUserContainer)
     body.prepend(newUserPopUp)
+
+    add.addEventListener('click', () => addUser(name.value, password.value, email.value))
 }
 
 function newTransButton() {
