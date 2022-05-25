@@ -141,12 +141,12 @@ async function addUser(name, password, email) {
 }
 
 function displayResult(res) {
-    $('#results').empty()
-    for(let item in res) {
-        let result = document.createElement("p1")
-        result.innerText = `Transaction ID${item.trans_id}: ${isCredit(item.money_in)} from ${item.kind}, in the amount of ${item.amount}`
+    // $('#results').empty()
+    // for(let item in res) {
+        let result = res
+    //     result.innerText = `Transaction ID${item.trans_id}: ${isCredit(item.money_in)} from ${item.kind}, in the amount of ${item.amount}`
         resultBox.append(result)
-    }
+    //}
 }
 
 function isCredit(bool) {
