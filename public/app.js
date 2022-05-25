@@ -28,6 +28,9 @@ function userSearchButton() {
             let name = document.createElement('input')
                 name.id = 'name'
                 name.classList.add('search-bar')
+            let id = document.createElement('input')
+                id.id = 'id'
+                id.classList.add('search-bar')
             let password = document.createElement('input')
                 password.id = 'password'
                 password.classList.add('search-bar')
@@ -40,7 +43,7 @@ function userSearchButton() {
     searchPopUp.append(searchContainer)
     body.prepend(searchPopUp)
 
-    search.addEventListener('click', () => findUser(name.value, password.value))
+    search.addEventListener('click', () => findUser(name.value, id.value, password.value))
 }
 
 function newUserButton() {
@@ -105,8 +108,8 @@ function hidePopUp(e) {
     }
 }
 
-async function findUser(name, password) {
-    $.get('https://damp-taiga-73156.herokuapp.com/person', (data) => {
+async function findUser(name, id, password) {
+    $.get(`https://damp-taiga-73156.herokuapp.com/person/${id}`, (data) => {
         console.log(data)
     })
 }
