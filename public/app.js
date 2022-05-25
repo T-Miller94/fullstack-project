@@ -128,7 +128,7 @@ async function addUser(name, password, email) {
     $.ajax({
         url: `https://damp-taiga-73156.herokuapp.com/person`,
         type: 'POST',
-        contentType: application/json,
+        contentType: 'application/json',
         dataType: 'json',
         data: JSON.stringify(messageBody),
         success: () => {console.log(`${name} ${email}`)},
