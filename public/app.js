@@ -115,11 +115,7 @@ async function findUser(name, id, password) {
     $.get(`https://damp-taiga-73156.herokuapp.com/person/${id}`, (user) => {
         if(name === user[0].name && password === user[0].password) {
             $.get(`https://damp-taiga-73156.herokuapp.com/transactions/${id}`, (trans) => {
-                let list = trans
-                for (let item of trans) {
-
-                }
-
+                displayResult(trans)
             })
         }
     })
