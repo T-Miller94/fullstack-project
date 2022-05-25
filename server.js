@@ -1,4 +1,5 @@
 //declare requirements
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const {Pool} = require('pg')
@@ -10,11 +11,10 @@ app.use(express.static('public'))
 
 //build and connect to pool
 const pool = new Pool ({
-    host: 'localhost',
-    database: 'budget_tracker',
-    user: 'alex',
-    password: '1313',
-    port: 5432
+        connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
+    }
 })
 pool.connect()
 
