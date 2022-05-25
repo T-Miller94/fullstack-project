@@ -11,17 +11,22 @@
 </head>
 <body>
     <div id="main">
-        <div>
-            <h1 id="head-container" class="header">Welcome</h1>
+        <div id="head-container">
+            <h1 class="header">Welcome</h1>
         </div>
         <div id="body-container">
-            <div id="main-ui">
-                <button id="user-search">Search Users</button>
-                <button id="new-user">New User?</button>
-                <input id="search-bar" type="text">
-                <div id="user-stats"></div>
-            </div>
-            <div id="results"></div>
+                <div id="user-container">
+                    <button id="user-search">Search Users</button>
+                    <button id="new-user">New User?</button>
+                </div>
+                <div id="main-ui-container">
+                    <div id="ui-container">
+                        <input id="search-bar" type="text">
+                        <button id="new-trans-button">New Transaction</button>
+                        <div id="user-stats"></div>
+                    </div>
+                    <div id="results"></div>
+                </div>
         </div>
     </div>
 </body>
