@@ -115,7 +115,11 @@ async function findUser(name, id, password) {
     $.get(`https://damp-taiga-73156.herokuapp.com/person/${id}`, (user) => {
         if(name === user[0].name && password === user[0].password) {
             $.get(`https://damp-taiga-73156.herokuapp.com/transactions/${id}`, (trans) => {
-                console.log(trans[0])
+                let list = trans
+                for (let item of trans) {
+
+                }
+
             })
         }
     })
@@ -138,4 +142,22 @@ async function addUser(name, password, email) {
         success: () => {console.log(`${name} ${email}`)},
         error: () => {console.log(error.message)}
     })
+}
+
+function displayResult(res) {
+    resultBox.empty()
+    for(let item in res) {
+        let result = document.createElement("p1")
+        result.innerText = `Transaction ID${item.trans_id}: ${isCredit(item.money_in)} from ${item.kind}, in the amount of ${item.amount}`
+        resultBox.append(result)
+    }
+}
+
+function isCredit(bool) {
+    if(bool === true) {
+        return `Credit`
+    }
+    if(bool === false) {
+        return `Expense`
+    }
 }
