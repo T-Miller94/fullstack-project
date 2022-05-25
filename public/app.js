@@ -106,7 +106,7 @@ function hidePopUp(e) {
 }
 
 async function findUser(name, password) {
-    let result = await fetch('http://localhost:8000/person')
+    let result = await fetch('https://damp-taiga-73156.herokuapp.com/person')
     let data = await result.rows
     console.log(data)
 }
