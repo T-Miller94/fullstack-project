@@ -111,6 +111,6 @@ function hidePopUp(e) {
 
 async function findUser(name, id, password) {
     $.get(`https://damp-taiga-73156.herokuapp.com/person/${id}`, (data) => {
-        console.log(data)
+        console.log(data[0])
     })
 }
