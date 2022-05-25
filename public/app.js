@@ -30,11 +30,11 @@ function userSearchButton() {
             let search = document.createElement('button')
                 search.id = 'search'
                 search.innerText = 'Search'
-            searchContainer.append(name)
-            searchContainer.append(password)
-            searchContainer.append(email)
-            searchContainer.append(search)
-        searchPopUp.append(searchContainer)
+        searchContainer.append(name)
+        searchContainer.append(password)
+        searchContainer.append(email)
+        searchContainer.append(search)
+    searchPopUp.append(searchContainer)
     body.prepend(searchPopUp)
     
 }
@@ -45,5 +45,27 @@ function hideSearch(e) {
 }
 
 function newUserButton() {
-    console.log('also working')
+    let newUserPopUp = document.createElement('div')
+    newUserPopUp.id = 'user-popup'
+    newUserPopUp.addEventListener('click', hideSearch)
+        let newUserContainer = document.createElement('div')
+        newUserContainer.id = 'search-container'
+            let name = document.createElement('input')
+                name.id = 'name'
+                name.classList.add('user-search')
+            let password = document.createElement('input')
+                password.id = 'password'
+                password.classList.add('user-search')
+            let email = document.createElement('input')
+                email.id = 'email'
+                email.classList.add('user-search')
+            let search = document.createElement('button')
+                search.id = 'search'
+                search.innerText = 'Add User'
+        newUserContainer.append(name)
+        newUserContainer.append(password)
+        newUserContainer.append(email)
+        newUserContainer.append(search)
+    newUserPopUp.append(newUserContainer)
+    body.prepend(newUserPopUp)
 }

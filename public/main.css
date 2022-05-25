@@ -19,7 +19,6 @@
     align-items: center;
     transform: translate(-50% , -50%);
 }
-#user-search {
-    margin: 20px;
-    padding: 20px;
+.user-search {
+    margin: auto;
 }
