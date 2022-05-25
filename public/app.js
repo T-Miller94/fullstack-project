@@ -16,10 +16,6 @@ function userSearchButton() {
     let searchPopUp = document.createElement('div')
     searchPopUp.id = 'user-popup'
     searchPopUp.addEventListener('click', hideSearch)
-    let cancel = document.createElement('button')
-    cancel.id = 'cancel'
-    cancel.addEventListener('click', hideSearch)
-    //searchPopUp.append(cancel)
         let searchContainer = document.createElement('div')
         searchContainer.id = 'search-container'
             let name = document.createElement('input')
@@ -43,7 +39,7 @@ function userSearchButton() {
     
 }
 function hideSearch(e) {
-    if(e.target.id === 'cancel') {
+    if(e.target.id === 'user-popup') {
         e.currentTarget.remove()
     }
 }
