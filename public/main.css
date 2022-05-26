@@ -1,6 +1,11 @@
 body {
     background-image: url('img/money.jpg');
 }
+
+#main {
+    background-color: rgba(148, 93, 20, 0.663);
+}
+
 #popup {
     width: 100%;
     height: 100%;
