@@ -49,6 +49,7 @@ function userSearchButton() {
         let searchUi = document.createElement('div')
         searchUi.classList.add('search-ui')
         let head = document.createElement('h1')
+        head.classList.add('head')
         head.id = 'search-head'
         head.innerText = 'Welcome Back'
         searchUi.append(name)
@@ -91,6 +92,7 @@ function newUserButton() {
         let searchUi = document.createElement('div')
         searchUi.classList.add('search-ui')
         let head = document.createElement('h1')
+        head.classList.add('head')
         head.id = 'add-head'
         head.innerText = 'Enter Your Info Below'
         searchUi.append(name)
@@ -133,6 +135,7 @@ function updateUserButton() {
         let searchUi = document.createElement('div')
         searchUi.classList.add('search-ui')
         let head = document.createElement('h1')
+        head.classList.add('head')
         head.id = 'update-head'
         head.innerText = 'Enter Your New Info Below'
         searchUi.append(name)
@@ -175,6 +178,7 @@ function newTransButton() {
         let searchUi = document.createElement('div')
         searchUi.classList.add('search-ui')
         let head = document.createElement('h1')
+        head.classList.add('head')
         head.id = 'new-trans-head'
         head.innerText = 'Enter Your Info Below'
         searchUi.append(money_in)
@@ -217,6 +221,7 @@ function deleteTransButton() {
         let searchUi = document.createElement('div')
         searchUi.classList.add('search-ui')
         let head = document.createElement('h1')
+        head.classList.add('head')
         head.id = 'new-trans-head'
         head.innerText = 'Enter Your Info Below'
         searchUi.append(id)
