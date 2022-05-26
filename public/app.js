@@ -199,7 +199,7 @@ async function updateUser(name, password, email) {
     }
 
     $.ajax({
-        url: `https://damp-taiga-73156.herokuapp.com/person/${user.id}`,
+        url: `https://damp-taiga-73156.herokuapp.com/person/${currentuser.id}`,
         type: 'PATCH',
         contentType: 'application/json',
         dataType: 'json',
@@ -215,7 +215,7 @@ async function updateUser(name, password, email) {
 }
 
 function displayStats(user) {
-    // $('#user-stats').empty()
+    $('#user-stats').empty()
     let nameBlock = document.createElement('h2')
     let emailBlock = document.createElement('h4')
     
