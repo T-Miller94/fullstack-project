@@ -287,6 +287,13 @@ async function addTrans(bool, kind, amount) {
     })
 }
 
+async function removeTrans (id) {
+    $.delete(`https://damp-taiga-73156.herokuapp.com/transactions/${id}`, (data) => {
+        findUser(currentuser.name, currentuser.id, currentuser.password)
+    })
+}
+
+
 function displayStats(user) {
     $('#user-stats').empty()
     let nameBlock = document.createElement('h2')
