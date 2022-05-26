@@ -47,7 +47,10 @@ function userSearchButton() {
     searchPopUp.append(searchContainer)
     body.prepend(searchPopUp)
 
-    search.addEventListener('click', () => findUser(name.value, id.value, password.value))
+    search.addEventListener('click', () => {
+        searchPopUp.remove()
+        findUser(name.value, id.value, password.value)
+    })    
 }
 
 function newUserButton() {
@@ -153,7 +156,7 @@ async function addUser(name, password, email) {
 
 function displayStats(user) {
     let nameBlock = document.createElement('h2')
-    let emailBlock = document.createElement('h3')
+    let emailBlock = document.createElement('h4')
     
     nameBlock.innerText = `Hello, ${user.name}`
     emailBlock.innerText = `Current email on record: ${user.email}`
