@@ -79,7 +79,10 @@ function newUserButton() {
     newUserPopUp.append(newUserContainer)
     body.prepend(newUserPopUp)
 
-    add.addEventListener('click', () => addUser(name.value, password.value, email.value))
+    add.addEventListener('click', () => {
+        newUserPopUp.remove()
+        addUser(name.value, password.value, email.value)
+    })
 }
 
 function updateUserButton() {
@@ -185,7 +188,12 @@ async function addUser(name, password, email) {
         contentType: 'application/json',
         dataType: 'json',
         data: JSON.stringify(messageBody),
-        success: () => {console.log(`${name} ${email}`)},
+        success: () => {
+            currentuser.name = name
+            currentuser.password = password
+            currentuser.email = email
+            displayStats(currentuser)
+        },
         error: () => {console.log(error.message)}
     })
 }
