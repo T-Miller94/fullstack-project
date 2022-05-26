@@ -30,12 +30,15 @@ function userSearchButton() {
         let searchContainer = document.createElement('div')
         searchContainer.id = 'popup-container'
             let name = document.createElement('input')
+            name.placeholder ='name'
                 name.id = 'name'
                 name.classList.add('search-bar')
             let id = document.createElement('input')
+            id.placeholder = `id#`
                 id.id = 'id'
                 id.classList.add('search-bar')
             let password = document.createElement('input')
+            password.placeholder = `password`
                 password.id = 'password'
                 password.classList.add('search-bar')
             let search = document.createElement('button')
