@@ -42,10 +42,20 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 30%;
+    height: 30vh;
 }
 
 #button-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+
+#user-stats {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -55,6 +65,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 30%;
+    height: 30vh;
 }
 
 #popup {
