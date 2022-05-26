@@ -12,6 +12,16 @@ body {
     align-items: center;
 }
 
+#body-container {
+    justify-content: center;
+    align-items: center;
+}
+
+#user-container {
+    justify-content: center;
+    align-items: center;
+}
+
 #head-container {
     display: flex;
     justify-content: center;
