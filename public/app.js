@@ -45,10 +45,15 @@ function userSearchButton() {
             let search = document.createElement('button')
                 search.id = 'search'
                 search.innerText = 'Search'
-        searchContainer.append(name)
-        searchContainer.append(id)
-        searchContainer.append(password)
-        searchContainer.append(search)
+        let searchUi = document.createElement('div')
+        let head = document.createElement('h1')
+        head.innerText = 'Welcome Back'
+        searchUi.append(name)
+        searchUi.append(id)
+        searchUi.append(password)
+        searchUi.append(search)
+        searchContainer.append(head)
+        searchContainer.append(searchUi)
     searchPopUp.append(searchContainer)
     body.prepend(searchPopUp)
 
