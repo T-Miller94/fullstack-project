@@ -1,5 +1,5 @@
 body {
-    background-image: url('img/money.jpg');
+    background-image: url('img/money.jpg') no-repeat;
 }
 
 #main {
