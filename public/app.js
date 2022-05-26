@@ -271,8 +271,7 @@ function displayStats(user) {
     stats.append(emailBlock)
 }
 
-function displayResult(obj) {
-    $('#results').empty()  
+function displayResult(obj) {  
     let result = document.createElement('p1')
     result.innerText = `Transaction ID:${obj.trans_id} - ${isCredit(obj.money_in)} from ${obj.kind}, in the amount of ${obj.amount}`
     resultBox.append(result)
