@@ -122,8 +122,12 @@ button {
     justify-content: center;
 }
 
+.head {
+    font-family: Georgia, serif;
+}
+
 .search-ui {
-    margin-top: 100px;
+    margin-top: 18px;
 }
 
 .search-bar {
