@@ -125,8 +125,9 @@ button {
 }
 
 .header {
+    text-shadow: 0 0 15px gray;
     font-family: Georgia, serif;
-    font-size: 5rem;
+    font-size: 3.5rem;
 }
 
 .head {
