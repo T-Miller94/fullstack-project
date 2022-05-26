@@ -21,6 +21,7 @@ userSearch.addEventListener('click', userSearchButton)
 newUser.addEventListener('click', newUserButton)
 newTrans.addEventListener('click', newTransButton)
 userUpdate.addEventListener('click', updateUserButton)
+deleteTrans.addEventListener('click', deleteTransButton)
 
 //callback functions
 function userSearchButton() {
@@ -30,15 +31,15 @@ function userSearchButton() {
         let searchContainer = document.createElement('div')
         searchContainer.id = 'popup-container'
             let name = document.createElement('input')
-            name.placeholder ='name'
+                name.placeholder ='name'
                 name.id = 'name'
                 name.classList.add('search-bar')
             let id = document.createElement('input')
-            id.placeholder = `id#`
+                id.placeholder = `id#`
                 id.id = 'id'
                 id.classList.add('search-bar')
             let password = document.createElement('input')
-            password.placeholder = `password`
+                password.placeholder = `password`
                 password.id = 'password'
                 password.classList.add('search-bar')
             let search = document.createElement('button')
@@ -64,12 +65,15 @@ function newUserButton() {
         let newUserContainer = document.createElement('div')
         newUserContainer.id = 'popup-container'
             let name = document.createElement('input')
+                name.placeholder = `Enter Name`
                 name.id = 'name'
                 name.classList.add('search-bar')
             let password = document.createElement('input')
+                password.placeholder = `Enter a Password`
                 password.id = 'password'
                 password.classList.add('search-bar')
             let email = document.createElement('input')
+                email.placeholder = `Enter you email`
                 email.id = 'email'
                 email.classList.add('search-bar')
             let add = document.createElement('button')
@@ -162,6 +166,30 @@ function newTransButton() {
             return false
         }
     }
+}
+
+function deleteTransButton() {
+    let deleteTransPopUp = document.createElement('div')
+    deleteTransPopUp.id = 'popup'
+    deleteTransPopUp.addEventListener('click', hidePopUp)
+        let deleteTransrContainer = document.createElement('div')
+        deleteTransrContainer.id = 'popup-container'
+            let id = document.createElement('input')
+                id.placeholder = 'Transaction ID#'
+                id.id = 'id'
+                id.classList.add('search-bar')
+            let remove = document.createElement('button')
+                remove.id = 'delete-trans'
+                remove.innerText = 'Delete'
+        deleteTransrContainer.append(email)
+        deleteTransrContainer.append(remove)
+    deleteTransPopUp.append(newUserContainer)
+    body.prepend(deleteTransPopUp)
+
+    remove.addEventListener('click', () => {
+        newUserPopUp.remove()
+        removeTrans(Number(id.value))
+    })
 }
 
 function hidePopUp(e) {
