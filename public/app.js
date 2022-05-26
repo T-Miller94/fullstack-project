@@ -187,24 +187,24 @@ async function addUser(name, password, email) {
     })
 }
 
-// async function updateUser(user) {
-//     let messageBody =
-//     {
-//         "name": `${user.name}`,
-//         "password": `${user.password}`,
-//         "email": `${user.email}`
-//     }
+async function updateUser(user) {
+    let messageBody =
+    {
+        "name": `${user.name}`,
+        "password": `${user.password}`,
+        "email": `${user.email}`
+    }
 
-//     $.ajax({
-//         url: `https://damp-taiga-73156.herokuapp.com/person/${user.id}`,
-//         type: 'PATCH',
-//         contentType: 'application/json',
-//         dataType: 'json',
-//         data: JSON.stringify(messageBody),
-//         success: () => {console.log(`${user.name} ${user.password} ${user.email}`)},
-//         error: () => {console.log(error.message)}
-//     })
-// }
+    $.ajax({
+        url: `https://damp-taiga-73156.herokuapp.com/person/${user.id}`,
+        type: 'PATCH',
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify(messageBody),
+        success: () => {console.log(`${user.name} ${user.password} ${user.email}`)},
+        error: () => {console.log(error.message)}
+    })
+}
 
 function displayStats(user) {
     let nameBlock = document.createElement('h2')
