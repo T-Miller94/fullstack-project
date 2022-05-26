@@ -10,6 +10,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    width: 100%;
 }
 
 #head-container {
@@ -62,9 +64,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    width: 400px;
-    height: 550px;
+    width: 450px;
+    height: 500px;
 }
 
 #popup {
