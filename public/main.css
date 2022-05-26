@@ -1,9 +1,10 @@
 body {
-    background-image: url('img/money.jpg');
+    background-image: url('img/money.jpg') no-repeat center fixed;
+    background-size: cover;
 }
 
 #main {
-    background-color: rgba(148, 93, 20, 0.663);
+    background-color: rgba(115, 72, 15, 0.663);
 }
 
 #popup {
