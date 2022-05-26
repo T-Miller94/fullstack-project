@@ -30,6 +30,7 @@ function userSearchButton() {
     searchPopUp.addEventListener('click', hidePopUp)
         let searchContainer = document.createElement('div')
         searchContainer.id = 'popup-container'
+        searchContainer.classList.add('popup')
             let name = document.createElement('input')
                 name.placeholder ='name'
                 name.id = 'name'
@@ -70,6 +71,7 @@ function newUserButton() {
     newUserPopUp.addEventListener('click', hidePopUp)
         let newUserContainer = document.createElement('div')
         newUserContainer.id = 'popup-container'
+        newUserContainer.classList.add('popup')
             let name = document.createElement('input')
                 name.placeholder = `Enter Name`
                 name.id = 'name'
@@ -110,6 +112,7 @@ function updateUserButton() {
     updatePopup.addEventListener('click', hidePopUp)
         let updateUserContainer = document.createElement('div')
         updateUserContainer.id = 'popup-container'
+        updateUserContainer.classList.add('popup')
             let name = document.createElement('input')
                 name.placeholder = `${currentuser.name}`
                 name.id = 'name'
@@ -125,10 +128,16 @@ function updateUserButton() {
             let update = document.createElement('button')
                 update.id = 'add-user'
                 update.innerText = 'Update'
-        updateUserContainer.append(name)
-        updateUserContainer.append(password)
-        updateUserContainer.append(email)
-        updateUserContainer.append(update)
+        let searchUi = document.createElement('div')
+        let head = document.createElement('h1')
+        head.id = 'update-head'
+        head.innerText = 'Enter Your New Info Below'
+        searchUi.append(name)
+        searchUi.append(password)
+        searchUi.append(email)
+        searchUi.append(update)
+    updateUserContainer.append(head)
+    updateUserContainer.append(searchUi)
     updatePopup.append(updateUserContainer)
     body.prepend(updatePopup)
 
@@ -144,6 +153,7 @@ function newTransButton() {
     newTransPopup.addEventListener('click', hidePopUp)
         let newTransContainer = document.createElement('div')
         newTransContainer.id = 'popup-container'
+        newTransContainer.classList.add('popup')
             let money_in = document.createElement('input')
                 money_in.placeholder = `Is Credit: true/false?`
                 money_in.id = 'money_in'
@@ -158,11 +168,17 @@ function newTransButton() {
                 amount.classList.add('search-bar')
             let add = document.createElement('button')
                 add.id = 'add'
-                add.innerText = 'Add Transactionr'
-        newTransContainer.append(money_in)
-        newTransContainer.append(kind)
-        newTransContainer.append(amount)
-        newTransContainer.append(add)
+                add.innerText = 'Add Transaction'
+        let searchUi = document.createElement('div')
+        let head = document.createElement('h1')
+        head.id = 'new-trans-head'
+        head.innerText = 'Enter Your Info Below'
+        searchUi.append(money_in)
+        searchUi.append(kind)
+        searchUi.append(amount)
+        searchUi.append(add)
+    newTransContainer.append(head)
+    newTransContainer.append(searchUi)
     newTransPopup.append(newTransContainer)
     body.prepend(newTransPopup)
 
@@ -186,6 +202,7 @@ function deleteTransButton() {
     deleteTransPopUp.addEventListener('click', hidePopUp)
         let deleteTransrContainer = document.createElement('div')
         deleteTransrContainer.id = 'popup-container'
+        deleteTransrContainer.classList.add('popup')
             let id = document.createElement('input')
                 id.placeholder = 'Transaction ID#'
                 id.id = 'id'
@@ -193,8 +210,14 @@ function deleteTransButton() {
             let remove = document.createElement('button')
                 remove.id = 'delete-trans'
                 remove.innerText = 'Delete'
-        deleteTransrContainer.append(id)
-        deleteTransrContainer.append(remove)
+        let searchUi = document.createElement('div')
+        let head = document.createElement('h1')
+        head.id = 'new-trans-head'
+        head.innerText = 'Enter Your Info Below'
+        searchUi.append(id)
+        searchUi.append(remove)
+    deleteTransrContainer.append(head)
+    deleteTransrContainer.append(searchUi)
     deleteTransPopUp.append(deleteTransrContainer)
     body.prepend(deleteTransPopUp)
 
