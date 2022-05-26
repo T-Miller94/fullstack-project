@@ -180,7 +180,7 @@ function newTransButton() {
         let head = document.createElement('h1')
         head.classList.add('head')
         head.id = 'new-trans-head'
-        head.innerText = 'Enter Your Info Below'
+        head.innerText = 'Enter Transaction Info Below'
         searchUi.append(money_in)
         searchUi.append(kind)
         searchUi.append(amount)
@@ -223,7 +223,7 @@ function deleteTransButton() {
         let head = document.createElement('h1')
         head.classList.add('head')
         head.id = 'new-trans-head'
-        head.innerText = 'Enter Your Info Below'
+        head.innerText = 'Enter Transaction ID Below'
         searchUi.append(id)
         searchUi.append(remove)
     deleteTransrContainer.append(head)
