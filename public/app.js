@@ -47,6 +47,7 @@ function userSearchButton() {
                 search.innerText = 'Search'
         let searchUi = document.createElement('div')
         let head = document.createElement('h1')
+        head.id = 'search-head'
         head.innerText = 'Welcome Back'
         searchUi.append(name)
         searchUi.append(id)
@@ -84,10 +85,16 @@ function newUserButton() {
             let add = document.createElement('button')
                 add.id = 'add-user'
                 add.innerText = 'Add User'
-        newUserContainer.append(name)
-        newUserContainer.append(password)
-        newUserContainer.append(email)
-        newUserContainer.append(add)
+        let searchUi = document.createElement('div')
+        let head = document.createElement('h1')
+        head.id = 'add-head'
+        head.innerText = 'Enter Your Info Below'
+        searchUi.append(name)
+        searchUi.append(password)
+        searchUi.append(email)
+        searchUi.append(add)
+    newUserContainer.append(head)
+    newUserContainer.append(searchUi)
     newUserPopUp.append(newUserContainer)
     body.prepend(newUserPopUp)
 
