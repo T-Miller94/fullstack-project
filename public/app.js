@@ -237,6 +237,28 @@ async function updateUser(name, password, email) {
     })
 }
 
+async function addTrans(bool, kind, amount) {
+    let messageBody =
+    {
+        "money_in": bool,
+        "kind": `${kind}`,
+        "amount": `${amount}`,
+        "person_id": `${currentuser.id}`
+    }
+
+    $.ajax({
+        url: `https://damp-taiga-73156.herokuapp.com/transactions`,
+        type: 'POST',
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify(messageBody),
+        success: () => {
+            findUser(currentuser.name, currentuser.id, currentuser.password)
+        },
+        error: () => {console.log(error.message)}
+    })
+}
+
 function displayStats(user) {
     $('#user-stats').empty()
     let nameBlock = document.createElement('h2')
@@ -250,6 +272,7 @@ function displayStats(user) {
 }
 
 function displayResult(obj) {
+    $('#results').empty()  
     let result = document.createElement('p1')
     result.innerText = `Transaction ID:${obj.trans_id} - ${isCredit(obj.money_in)} from ${obj.kind}, in the amount of ${obj.amount}`
     resultBox.append(result)
