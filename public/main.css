@@ -88,7 +88,7 @@ p1 {
     align-content: center;
 }
 #popup-container {
-    background-color: rgba(251, 251, 251, 0.66);
+    background-color: rgb(251, 251, 251);
     position: fixed;
     top: 50%;
     left: 50%;
