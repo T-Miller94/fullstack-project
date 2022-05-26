@@ -12,6 +12,12 @@ body {
     align-items: center;
 }
 
+#head-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #body-container {
     display: flex;
     flex-direction: column;
@@ -27,11 +33,12 @@ body {
 
 #main-ui-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#head-container {
+#button-container {
     display: flex;
     justify-content: center;
     align-items: center;
