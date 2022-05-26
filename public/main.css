@@ -31,7 +31,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 #main-ui-container {
@@ -100,5 +100,5 @@ p1 {
     transform: translate(-50% , -50%);
 }
 .search-bar {
-    margin: auto;
+    margin: 20px;
 }
