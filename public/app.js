@@ -129,27 +129,39 @@ function newTransButton() {
         let newTransContainer = document.createElement('div')
         newTransContainer.id = 'popup-container'
             let money_in = document.createElement('input')
+                money_in.placeholder = `Is Credit: true/false?`
                 money_in.id = 'money_in'
                 money_in.classList.add('search-bar')
             let kind = document.createElement('input')
+                kind.placeholder = `Where's this from`
                 kind.id = 'kind'
                 kind.classList.add('search-bar')
             let amount = document.createElement('input')
+                amount.placeholder = `How much? xxxx.xx`
                 amount.id = 'amount'
                 amount.classList.add('search-bar')
-            let person_id = document.createElement('input')
-                person_id.id = 'person_id'
-                person_id.classList.add('search-bar')
             let add = document.createElement('button')
                 add.id = 'add'
                 add.innerText = 'Add Transactionr'
         newTransContainer.append(money_in)
         newTransContainer.append(kind)
         newTransContainer.append(amount)
-        newTransContainer.append(person_id)
         newTransContainer.append(add)
     newTransPopup.append(newTransContainer)
     body.prepend(newTransPopup)
+
+    add.addEventListener('click', () => {
+        newTransPopup.remove()
+        addTrans(getBool(money_in.value), kind.value, Number(amount.value))
+    })
+    function getBool(str) {
+        let workingStr = str.toLowerCase()
+        if(workingStr === 'true') {
+            return true
+        } else if(workingStr === 'false') {
+            return false
+        }
+    }
 }
 
 function hidePopUp(e) {
