@@ -14,6 +14,8 @@ const main = document.querySelector('#main')
                 const stats = document.querySelector('#user-stats')
             const resultBox = document.querySelector('#results')
 
+let currentuser = {}
+
 //button functions
 userSearch.addEventListener('click', userSearchButton)
 newUser.addEventListener('click', newUserButton)
@@ -115,7 +117,12 @@ function hidePopUp(e) {
 async function findUser(name, id, password) {
     $.get(`https://damp-taiga-73156.herokuapp.com/person/${id}`, (user) => {
         if(name === user[0].name && password === user[0].password) {
+            currentuser.name = user[0].name
+            currentuser.password = user[0].password
+            currentuser.email = user[0].email
             $.get(`https://damp-taiga-73156.herokuapp.com/transactions-of/${id}`, (trans) => {
+                $('#user-stats').empty()
+                displayStats(currentuser)
                 $('#results').empty()    
                 for(let obj of trans) {
                     displayResult(obj)
@@ -144,6 +151,17 @@ async function addUser(name, password, email) {
     })
 }
 
+function displayStats(user) {
+    let nameBlock = document.createElement('h2')
+    let emailBlock = document.createElement('h3')
+    
+    nameBlock.innerText = `Hello, ${user.name}`
+    emailBlock.innerText = `Current email on record: ${user.email}`
+
+    stats.append(nameBlock)
+    stats.append(emailBlock)
+}
+
 function displayResult(obj) {
     let result = document.createElement('p1')
     result.innerText = `Transaction ID:${obj.trans_id} - ${isCredit(obj.money_in)} from ${obj.kind}, in the amount of ${obj.amount}`
@@ -159,3 +177,4 @@ function isCredit(bool) {
     }
 }
 //TODO:  add update user button and add delete trans button functionality
+//global variable of current user, so as to auto access values for update user
