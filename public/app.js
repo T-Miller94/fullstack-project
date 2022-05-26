@@ -291,12 +291,9 @@ async function removeTrans (id) {
     $.ajax({
         url: `https://damp-taiga-73156.herokuapp.com/transactions/${id}`,
         type: 'DELETE',
-        contentType: 'application/json',
-        dataType: 'json',
         success: () => {
             findUser(currentuser.name, currentuser.id, currentuser.password)
-        },
-        error: () => {console.log(error.message)}
+        }
     })
 }
 
