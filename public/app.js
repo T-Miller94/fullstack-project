@@ -293,7 +293,6 @@ async function removeTrans (id) {
         type: 'DELETE',
         contentType: 'application/json',
         dataType: 'json',
-        data: JSON.stringify(messageBody),
         success: () => {
             findUser(currentuser.name, currentuser.id, currentuser.password)
         },
