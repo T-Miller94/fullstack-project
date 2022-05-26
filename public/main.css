@@ -6,11 +6,13 @@ body {
 
 #main {
     background-color: rgba(91, 57, 13, 0.663);
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #head-container {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
