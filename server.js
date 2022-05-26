@@ -122,7 +122,7 @@ app.get('/transactions-of/:id', async (req, res) => {
     try {
         let id = req.params.id
         let data = await pool.query(`
-            SELECT name, trans_id, money_in, amount
+            SELECT name, trans_id, money_in, kind, amount
             FROM person, transactions 
             WHERE transactions.person_id = person.id AND person.id = $1`, [id])
         res.json(data.rows)
