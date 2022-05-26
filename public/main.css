@@ -31,6 +31,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 #main-ui-container {
@@ -53,6 +54,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
 }
 
 #user-stats {
@@ -70,6 +72,10 @@ body {
     width: 450px;
     height: 500px;
     margin-left: 20px;
+}
+
+p1 {
+    margin-top: 10px;
 }
 
 #popup {
