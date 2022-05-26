@@ -89,17 +89,20 @@ function updateUserButton() {
         let updateUserContainer = document.createElement('div')
         updateUserContainer.id = 'popup-container'
             let name = document.createElement('input')
+                name.placeholder = `${currentuser.name}`
                 name.id = 'name'
                 name.classList.add('search-bar')
             let password = document.createElement('input')
+                password.placeholder = `${currentuser.password}`
                 password.id = 'password'
                 password.classList.add('search-bar')
             let email = document.createElement('input')
+                email.placeholder = `${currentuser.email}`
                 email.id = 'email'
                 email.classList.add('search-bar')
             let update = document.createElement('button')
                 update.id = 'add-user'
-                update.innerText = 'Add User'
+                update.innerText = 'Update'
         updateUserContainer.append(name)
         updateUserContainer.append(password)
         updateUserContainer.append(email)
@@ -201,7 +204,12 @@ async function updateUser(user) {
         contentType: 'application/json',
         dataType: 'json',
         data: JSON.stringify(messageBody),
-        success: () => {console.log(`${user.name} ${user.password} ${user.email}`)},
+        success: () => {
+            currentuser.name = user.name
+            currentuser.password = user.password
+            currentuser.email = user.email
+            displayStats(currentuser)
+        },
         error: () => {console.log(error.message)}
     })
 }
