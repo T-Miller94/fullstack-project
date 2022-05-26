@@ -183,7 +183,7 @@ function deleteTransButton() {
                 remove.innerText = 'Delete'
         deleteTransrContainer.append(id)
         deleteTransrContainer.append(remove)
-    deleteTransPopUp.append(newUserContainer)
+    deleteTransPopUp.append(deleteTransrContainer)
     body.prepend(deleteTransPopUp)
 
     remove.addEventListener('click', () => {
