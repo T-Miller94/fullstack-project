@@ -12,6 +12,7 @@ body {
     align-items: center;
     height: 98vh;
     width: 100%;
+    border-radius: 5px;
 }
 
 #head-container {
@@ -48,6 +49,7 @@ body {
     width: 400px;
     height: 500px;
     margin-right: 20px;
+    border-radius: 5px;
 }
 
 #button-container {
@@ -72,6 +74,7 @@ body {
     width: 450px;
     height: 500px;
     margin-left: 20px;
+    border-radius: 5px;
 }
 
 p1 {
@@ -86,9 +89,10 @@ p1 {
     display: flex;
     justify-content: center;
     align-content: center;
+    border-radius: 5px;
 }
 #popup-container {
-    background-color: rgb(251, 251, 251);
+    background-color: rgb(88, 113, 72);
     position: fixed;
     top: 50%;
     left: 50%;
@@ -98,6 +102,7 @@ p1 {
     justify-content: center;
     align-items: center;
     transform: translate(-50% , -50%);
+    border-radius: 5px;
 }
 .search-bar {
     margin: 20px;
