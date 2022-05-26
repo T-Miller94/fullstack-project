@@ -88,12 +88,12 @@ p1 {
     align-content: center;
 }
 #popup-container {
-    background-color: white;
+    background-color: rgba(251, 251, 251, 0.66);
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 75%;
-    height: 75%;
+    width: 50%;
+    height: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
