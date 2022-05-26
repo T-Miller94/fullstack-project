@@ -13,7 +13,7 @@ body {
     height: 98vh;
     width: 100%;
     border-radius: 5px;
-    box-shadow: 0px 0px 20px rgb(121, 115, 115);
+    box-shadow: 0px 0px 30px rgb(44, 44, 44);
 }
 
 #head-container {
@@ -51,7 +51,7 @@ body {
     height: 500px;
     margin-right: 20px;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgb(121, 115, 115);
+    box-shadow: 0px 0px 20px rgb(44, 44, 44);
 }
 
 #button-container {
@@ -77,7 +77,7 @@ body {
     height: 500px;
     margin-left: 20px;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgb(121, 115, 115);
+    box-shadow: 0px 0px 20px rgb(44, 44, 44);
 }
 
 p1 {
@@ -93,7 +93,7 @@ p1 {
     justify-content: center;
     align-content: center;
     border-radius: 5px;
-    box-shadow: 0px 0px 15px rgb(0, 0, 0);
+    box-shadow: 0px 0px 30px rgb(0, 0, 0);
 }
 #popup-container {
     background-color: rgb(61, 83, 47);
@@ -107,7 +107,7 @@ p1 {
     align-items: center;
     transform: translate(-50% , -50%);
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgb(44, 44, 44);
+    box-shadow: 0px 0px 15px rgb(44, 44, 44);
 }
 .search-bar {
     margin: 20px;
