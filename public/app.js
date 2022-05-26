@@ -181,13 +181,13 @@ function deleteTransButton() {
             let remove = document.createElement('button')
                 remove.id = 'delete-trans'
                 remove.innerText = 'Delete'
-        deleteTransrContainer.append(email)
+        deleteTransrContainer.append(id)
         deleteTransrContainer.append(remove)
     deleteTransPopUp.append(newUserContainer)
     body.prepend(deleteTransPopUp)
 
     remove.addEventListener('click', () => {
-        // deleteTransPopUp.remove()
+        deleteTransPopUp.remove()
         removeTrans(Number(id.value))
     })
 }
