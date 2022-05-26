@@ -112,7 +112,7 @@ function updateUserButton() {
 
     update.addEventListener('click', () => {
         updatePopup.remove()
-        updateUser(currentuser)
+        updateUser(name.value, password.value, email.value)
     })
 }
 
@@ -190,12 +190,12 @@ async function addUser(name, password, email) {
     })
 }
 
-async function updateUser(user) {
+async function updateUser(name, password, email) {
     let messageBody =
     {
-        "name": `${user.name}`,
-        "password": `${user.password}`,
-        "email": `${user.email}`
+        "name": `${name}`,
+        "password": `${password}`,
+        "email": `${email}`
     }
 
     $.ajax({
@@ -205,9 +205,9 @@ async function updateUser(user) {
         dataType: 'json',
         data: JSON.stringify(messageBody),
         success: () => {
-            currentuser.name = user.name
-            currentuser.password = user.password
-            currentuser.email = user.email
+            currentuser.name = name
+            currentuser.password = password
+            currentuser.email = email
             displayStats(currentuser)
         },
         error: () => {console.log(error.message)}
@@ -215,6 +215,7 @@ async function updateUser(user) {
 }
 
 function displayStats(user) {
+    stats.empty()
     let nameBlock = document.createElement('h2')
     let emailBlock = document.createElement('h4')
     
