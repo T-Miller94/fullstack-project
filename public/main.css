@@ -137,6 +137,7 @@ button {
 
 .search-ui {
     margin-top: 18px;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
