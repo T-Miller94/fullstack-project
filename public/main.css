@@ -138,6 +138,7 @@ button {
 .search-ui {
     margin-top: 18px;
     justify-content: center;
+    align-items: center;
 }
 
 .search-bar {
