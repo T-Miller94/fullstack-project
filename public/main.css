@@ -91,9 +91,10 @@ button {
     font-family: 'Courier New', monospace;
     font-weight: 500;
     box-shadow: 0px 0px 10px rgb(44, 44, 44);
+    transition-duration: 0.3s;
 }
 button:hover {
-    background-color: rgb rgb(129, 126, 126);
+    background-color: rgb rgb(79, 78, 78);
     box-shadow: 0px 0px 15px rgb(239, 198, 76);
 }
 
