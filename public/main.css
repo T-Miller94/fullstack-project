@@ -92,6 +92,10 @@ button {
     font-weight: 500;
     box-shadow: 0px 0px 10px rgb(44, 44, 44);
 }
+button:hover {
+    background-color: rgb rgb(129, 126, 126);
+    box-shadow: 0px 0px 15px rgb(239, 198, 76);
+}
 
 #popup {
     width: 100%;
